@@ -53,12 +53,12 @@ twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020)
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 2020)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2000)) ///
         (lfit `repvar' y10 if y10<1925&y10>=1870, `mps_pred' range(1870 2020)) ///
-		(lfit `officervar' y10 if y10<1925&y10>=1870, `officers_pred' range(1870 1970) ) ///
-(connected `drvar' y10 if y10<1925&y10>=1870, `doctors' ) ///
-        (connected `lawvar'  y10 if y10<1925&y10>=1870, `lawyers'  ) ///
-        (connected `busvar' y10 if y10<1925&y10>=1870, `business' ) ///
-        (connected `repvar' y10 if y10<1925&y10>=1870, `mps' ) ///
-		(connected `officervar' y10 if y10<1925&y10>=1870, `officers' ) ///
+		(lfit `officervar' y10 if y10<1915&y10>=1870, `officers_pred' range(1870 1970) ) ///
+		(connected `drvar' y10 if y10>=1870&y10<1925, `doctors' ) ///
+        (connected `lawvar'  y10 if y10>=1870&y10<1925, `lawyers'  ) ///
+        (connected `busvar' y10 if y10>=1870&y10<1925, `business' ) ///
+        (connected `repvar' y10 if y10>=1870&y10<1925, `mps' ) ///
+		(connected `officervar' y10 if y10>=1870&y10<1925, `officers' ) ///
 ,     text(-2.30 1895 "Austria-Hungary", place(c) size(small)) text(-2.2 1933 "Horthy-", place(c) size(small))  text(-2.30 1933 "regency", place(c) size(small)) ///lace(c) size(small)) ///
     text(-2.30 1967 "Communism", place(c) size(small)) text(-2.30 2005 "3rd Republic", place(c) size(small)) ///
 	    text(-2.30 1830 "Habsburg Empire", place(c) size(small))  ///
@@ -79,17 +79,12 @@ twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020)
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 2020)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2000)) ///
         (lfit `repvar' y10 if y10<1925&y10>=1870, `mps_pred' range(1870 2020)) ///
-		(lfit `officervar' y10 if y10<1925&y10>=1870, `officers_pred' range(1870 1970) ) ///
-(connected `drvar' y10 if y10<1925&y10>=1870, `doctors' ) ///
-        (connected `lawvar'  y10 if y10<1925&y10>=1870, `lawyers'  ) ///
-        (connected `busvar' y10 if y10<1925&y10>=1870, `business' ) ///
-        (connected `repvar' y10 if y10<1925&y10>=1870, `mps' ) ///
-		(connected `officervar' y10 if y10<1925&y10>=1870, `officers' ) ///
-(connected `drvar' y10 if y10==1925|y10==1935|y10==1945 , `doctors') ///
-        (connected `lawvar'  y10  if y10==1925|y10==1935|y10==1945, `lawyers' ) ///
-        (connected `busvar' y10  if y10==1925|y10==1935|y10==1945, `business') ///
-        (connected `repvar' y10  if y10==1925|y10==1935, `mps') ///
-					(connected `officervar' y10 if y10==1925|y10==1935, `officers' ) ///
+		(lfit `officervar' y10 if y10<1915&y10>=1870, `officers_pred' range(1870 1970) ) ///
+		(connected `drvar' y10 if y10>=1870&y10<1945, `doctors' ) ///
+        (connected `lawvar'  y10 if y10>=1870&y10<1945, `lawyers'  ) ///
+        (connected `busvar' y10 if y10>=1870&y10<1945, `business' ) ///
+        (connected `repvar' y10 if y10>=1870&y10<1945, `mps' ) ///
+		(connected `officervar' y10 if y10>=1870&y10<1945, `officers' ) ///
 ,     text(-2.30 1895 "Austria-Hungary", place(c) size(small)) text(-2.2 1933 "Horthy-", place(c) size(small))  text(-2.30 1933 "regency", place(c) size(small)) ///lace(c) size(small)) ///
     text(-2.30 1967 "Communism", place(c) size(small)) text(-2.30 2005 "3rd Republic", place(c) size(small)) ///
 	    text(-2.30 1830 "Habsburg Empire", place(c) size(small))  ///
@@ -110,26 +105,16 @@ graph export `1'_step3.png, replace
 
 
 
-twoway 		(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020) ) ///
+twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020) ) ///
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 2020)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2000)) ///
         (lfit `repvar' y10 if y10<1925&y10>=1870, `mps_pred' range(1870 2020)) ///
-		(lfit `officervar' y10 if y10<1925&y10>=1870, `officers_pred' range(1870 1970) ) ///
-		(connected `drvar' y10 if y10<1925&y10>=1870, `doctors' ) ///
-        (connected `lawvar'  y10 if y10<1925&y10>=1870, `lawyers'  ) ///
-        (connected `busvar' y10 if y10<1925&y10>=1870, `business' ) ///
-        (connected `repvar' y10 if y10<1925&y10>=1870, `mps' ) ///
-		(connected `officervar' y10 if y10<1925&y10>=1870, `officers' ) ///
-(connected `drvar' y10 if y10==1925|y10==1935|y10==1945 , `doctors') ///
-        (connected `lawvar'  y10  if y10==1925|y10==1935|y10==1945, `lawyers' ) ///
-        (connected `busvar' y10  if y10==1925|y10==1935|y10==1945, `business') ///
-        (connected `repvar' y10  if y10==1925|y10==1935, `mps') ///
-					(connected `officervar' y10 if y10==1925|y10==1935, `officers' ) ///
-        (scatter `repvar' y10 if y10==1945, `mps') ///
-        (connected `drvar' y10 if y10>1945&y10<1995, `doctors') ///
-        (connected `lawvar'  y10  if y10>1945&y10<1995, `lawyers' ) ///
-        (connected `busvar' y10  if y10>1945&y10<1995, `business') ///
-        (connected `repvar' y10  if y10>1945&y10<1995, `mps') ///
+		(lfit `officervar' y10 if y10<1915&y10>=1870, `officers_pred' range(1870 1970) ) ///
+		(connected `drvar' y10 if y10>=1870&y10<1989, `doctors' ) ///
+        (connected `lawvar'  y10 if y10>=1870&y10<1989, `lawyers'  ) ///
+        (connected `busvar' y10 if y10>=1870&y10<1989, `business' ) ///
+        (connected `repvar' y10 if y10>=1870&y10<1989, `mps' ) ///
+		(connected `officervar' y10 if y10>=1870&y10<1989, `officers' ) ///
 				(connected `officervar' y10 if  y10>1945&y10<1995, `officers' ) ///
 ,     text(-2.30 1895 "Austria-Hungary", place(c) size(small)) text(-2.2 1933 "Horthy-", place(c) size(small))  text(-2.30 1933 "regency", place(c) size(small)) ///lace(c) size(small)) ///
     text(-2.30 1967 "Communism", place(c) size(small)) text(-2.30 2005 "3rd Republic", place(c) size(small)) ///
@@ -151,28 +136,12 @@ twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020)
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 2020)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2000)) ///
         (lfit `repvar' y10 if y10<1925&y10>=1870, `mps_pred' range(1870 2020)) ///
-		(lfit `officervar' y10 if y10<1925&y10>=1870, `officers_pred' range(1870 1970) ) ///
-		(connected `drvar' y10 if y10<1925&y10>=1870, `doctors' ) ///
-        (connected `lawvar'  y10 if y10<1925&y10>=1870, `lawyers'  ) ///
-        (connected `busvar' y10 if y10<1925&y10>=1870, `business' ) ///
-        (connected `repvar' y10 if y10<1925&y10>=1870, `mps' ) ///
-		(connected `officervar' y10 if y10<1925&y10>=1870, `officers' ) ///
-(connected `drvar' y10 if y10==1925|y10==1935|y10==1945 , `doctors') ///
-        (connected `lawvar'  y10  if y10==1925|y10==1935|y10==1945, `lawyers' ) ///
-        (connected `busvar' y10  if y10==1925|y10==1935|y10==1945, `business') ///
-        (connected `repvar' y10  if y10==1925|y10==1935, `mps') ///
-					(connected `officervar' y10 if y10==1925|y10==1935, `officers' ) ///
-        (scatter `repvar' y10 if y10==1945, `mps') ///
-        (connected `drvar' y10 if y10>1945&y10<1995, `doctors') ///
-        (connected `lawvar'  y10  if y10>1945&y10<1995, `lawyers' ) ///
-        (connected `busvar' y10  if y10>1945&y10<1995, `business') ///
-        (connected `repvar' y10  if y10>1945&y10<1995, `mps') ///
-				(connected `officervar' y10 if  y10>1945&y10<1995, `officers' ) ///
-        (connected `drvar' y10 if y10>=1995, `doctors') ///
-        (connected `lawvar'  y10  if y10>=1995, `lawyers' ) ///
-        (connected `busvar' y10  if y10>=1995, `business') ///
-        (connected `repvar' y10  if y10>=1995, `mps') ///
-					(connected `officervar' y10 if y10>=1995, `officers' ) ///
+		(lfit `officervar' y10 if y10<1915&y10>=1870, `officers_pred' range(1870 1970) ) ///
+		(connected `drvar' y10 if y10>=1870, `doctors' ) ///
+        (connected `lawvar'  y10 if y10>=1870, `lawyers'  ) ///
+        (connected `busvar' y10 if y10>=1870, `business' ) ///
+        (connected `repvar' y10 if y10>=1870, `mps' ) ///
+		(connected `officervar' y10 if y10>=1870, `officers' ) ///
 ,     text(-2.30 1895 "Austria-Hungary", place(c) size(small)) text(-2.2 1933 "Horthy-", place(c) size(small))  text(-2.30 1933 "regency", place(c) size(small)) ///lace(c) size(small)) ///
     text(-2.30 1967 "Communism", place(c) size(small)) text(-2.30 2005 "3rd Republic", place(c) size(small)) ///
 	    text(-2.30 1830 "Habsburg Empire", place(c) size(small))  ///
