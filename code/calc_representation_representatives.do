@@ -7,6 +7,7 @@ use "$population_control_data_dir/$population_control_file", clear
 
 gen y5=floor(year/5)*5
 gen y10=floor(year/10)*10
+do Periods_definition.do
 
 collapse (mean) *_ip, by(`1')
 local collapsevar = "`1'"
@@ -50,6 +51,8 @@ tsset `1'
 rename nobility_ip noble_ip
 
 
+
+
 * calculate relative rep
 foreach s in "noble" "roma2"  "top20"  {
 
@@ -84,6 +87,13 @@ foreach s in "noble" "roma2"   "top20" "hunref"   {
 	gen reps_share_`s'_nr = ( relative_rep_`s'_nr*reps_popshare ) 
 
 }
+
+
+gen relative_rep_jewish_ip = cjn_share_in_rep / commonjewishname_ip
+*gen relative_rep_german_broad_ip = grmn_broad_share_in_rep / german_broad_ip
+gen relative_rep_german_ip = grmn_share_in_rep / german_ip
+gen relative_rep_gjs_ip = gerjewsla_share_in_rep / gerjewsla_ip
+
 
 
 * calculate latent status means vis-a-vis whole population

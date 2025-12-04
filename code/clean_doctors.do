@@ -229,19 +229,15 @@ preserve
 *		 voc_share_in_doctors = voc ///
 
 
-	collapse (mean) german_share_in_doctors = german slavic_share_in_doctors = slavic romanian_share_in_doctors = romanian ///
-		 cjewishname_share_in_doctors = commonjewishname german_broad_share_in_doctors = german_broad  ///
-		 slavic_broad_share_in_doctors = slavic_broad romanian_broad_share_in_doctors = romanian_broad  ///
+	collapse (mean) grmn_share_in_doctors = german slv_share_in_doctors = slavic rmn_share_in_doctors = romanian ///
+		 cjn_share_in_doctors = commonjewishname ///
 		 noble_share_in_doctors = nobility top20_share_in_doctors = top20 roma_share_in_doctors = roma endsi_share_in_doctors = endsi  ///
 		 hunref_share_in_doctors = hun_ref ///
 		 roma2_share_in_doctors = roma2 ///
+		 gerjewsla_share_in_doctors = gerjewsla ///
 		 (sum)  doctor_count = count doctor_noble_count = nobility [weight = grads] , by(`collapsevar')
 		 
 		 
-	rename romanian_broad_share_in_doctors rmn_broad_share_in_doctors
-	rename german_broad_share_in_doctors grmn_broad_share_in_doctors
-	rename slavic_broad_share_in_doctors slv_broad_share_in_doctors
-
 	* this is because 1945 and 1946 data are not reliable
 	*drop if year == 1946
 	*drop if year == 1945 

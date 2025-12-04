@@ -6,7 +6,6 @@ use  "$population_control_data_dir/$population_control_file", clear
 
 gen y5=floor(year/5)*5
 gen y10=floor(year/10)*10
-
 do Periods_definition.do
 
 collapse (mean) *_ip, by(`1')
@@ -30,7 +29,7 @@ replace roma_share_predicted = .01149176 if roma_share_predicted ==. & `1'<2018
 
 rename nobility_ip noble_ip
 
-foreach s in "noble" "roma2"  "iw_hs" "iw_ls" "top20" {
+foreach s in "noble" "roma2"  "top20" {
 	
 	cap drop x
 	ipolate `s'_ip `1', epolate gen(x)
@@ -50,8 +49,10 @@ tsset `1'
 
 
 
-gen relative_rep_jewish_ip = cjewishname_share_in_officers / commonjewishname_ip
-gen relative_rep_german_ip = german_share_in_officers / german_ip
+gen relative_rep_jewish_ip = cjn_share_in_officers / commonjewishname_ip
+gen relative_rep_german_ip = grmn_share_in_officers / german_ip
+*gen relative_rep_german_broad = grmn_broad_share_in_officers / german_broad
+gen relative_rep_gjs_ip = gerjewsla_share_in_officers / gerjewsla_ip
 
 
 

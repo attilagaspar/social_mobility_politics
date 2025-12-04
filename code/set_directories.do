@@ -11,6 +11,7 @@ global army_raw_dir = "../../social mobility (1)/data/army"
 global army_other_raw_dir ="../../social mobility (1)/data/consistent/army"
 global business_raw_dir = "../data/processed"
 global opten_raw_dir = "../data/raw/opten/data"
+global hschool_raw_dir = "../../social mobility (1)/data/consistent/education"
 
 global intermediate_data_dir = "../data"
 global population_control_file = "population_control_ipolated_to18thcentury.dta"

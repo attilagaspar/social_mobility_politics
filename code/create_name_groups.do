@@ -53,10 +53,12 @@ gen ln=""
 replace ln = proper(lastname)
 do name_origins_on_simplified_no_overlap.do ln
 drop ln
+egen gerjewsla = rowmax(german commonjewishname slavic magyarisation_list)
 
 * create reference group : Everyone - nobles - Slavs - Germans - Jewisn names - Romanians - Roma
 egen nonref = rowmax(german_broad slavic_broad romanian_broad commonjewishname nobility roma roma2 )
 gen hun_ref = 1-nonref
+
 
 * alternative ending: ..i (not exclusive)
 gen endsi=0	

@@ -7,6 +7,7 @@ use "$population_control_data_dir/$population_control_file", clear
 
 gen y5=floor(year/5)*5
 gen y10=floor(year/10)*10
+do Periods_definition.do
 
 collapse (mean) *_ip, by(`1')
 local collapsevar = "`1'"
@@ -37,7 +38,7 @@ tsset `1'
 
 
 * these variables are not used, and their names are too long
-drop german_share_in_doctors slavic_share_in_doctors romanian_share_in_doctors 			///
+*drop german_share_in_doctors slavic_share_in_doctors romanian_share_in_doctors 			///
 cjewishname_share_in_doctors grmn_broad_share_in_doctors slv_broad_share_in_doctors 		///
 rmn_broad_share_in_doctors  cjewishname_share_in_doctors_ip  ///
 grmn_broad_share_in_doctors_ip slv_broad_share_in_doctors_ip rmn_broad_share_in_doctors_ip 
@@ -60,6 +61,12 @@ foreach v of varlist  *_share_in_doctors* {
  replace `v'=`v'/domestic_share_actual
 
 }
+
+
+gen relative_rep_jewish_ip = cjn_share_in_doctors / commonjewishname_ip
+gen relative_rep_german_ip =  grmn_share_in_doctors/ german_ip
+gen relative_rep_gjs_ip = gerjewsla_share_in_doctors / gerjewsla_ip
+
 
 
 rename nobility_ip noble_ip

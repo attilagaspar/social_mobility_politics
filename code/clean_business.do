@@ -97,15 +97,20 @@ replace y10 = floor(year/10)*10
 
 rename n_person count 
 
-foreach collapsevar of varlist  y10 year   {  //y5 year periods
+do Periods_definition.do
+
+
+foreach collapsevar of varlist  y10 year periods  {  //y5 year periods
 
 	preserve
 	
 	
-	collapse (mean) german_share_in_bus = german slavic_share_in_bus = slavic romanian_share_in_bus = romanian ///
-		 cjewishname_share_in_bus = commonjewishname   ///
+	collapse (mean) grmn_share_in_bus = german slv_share_in_bus = slavic rmn_share_in_bus = romanian ///
+		 cjn_share_in_bus = commonjewishname grmn_broad_share_in_bus = german_broad  ///
+		 slv_broad_share_in_bus = slavic_broad rmn_broad_share_in_bus = romanian_broad  ///
 		 noble_share_in_bus = nobility top20_share_in_bus = top20 roma_share_in_bus = roma endsi_share_in_bus = endsi  ///
 		 hunref_share_in_bus = hun_ref ///
+		 gerjewsla_share_in_bus = gerjewsla ///
 		 (semean) sd_top20_in_bus = top20 ///
 		 sd_noble_in_bus = nobility ///
 		 (sum)  business_count = count business_noble_count = nobility [w=count]  , by(`collapsevar')

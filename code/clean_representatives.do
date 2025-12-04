@@ -42,10 +42,11 @@ foreach collapsevar of varlist year y10 y5 periods {
 		noble_share_in_reps = nobility 	///
 		roma2_share_in_reps = roma2      ///
 		hunref_share_in_reps = hun_ref      ///
-		jewishname_share_in_reps = commonjewishname   ///
-		german_share_in_reps = german  ///
-		german_broad_share_in_reps = german_broad  ///
+		grmn_share_in_reps = german slv_share_in_reps = slavic rmn_share_in_reps = romanian ///
+		cjn_share_in_reps = commonjewishname grmn_broad_share_in_reps = german_broad  ///
+		slv_broad_share_in_reps= slavic_broad rmn_broad_share_in_reps = romanian_broad  ///
 		reps_avg =  count ///
+		gerjewsla_share_in_reps = gerjewsla ///
 		(sum) reps_count = count 	 	///
 		, by(`collapsevar')
 	

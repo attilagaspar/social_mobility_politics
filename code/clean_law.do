@@ -12,6 +12,10 @@ gen y5 = round(year/5)*5
 
 do Periods_definition.do
 
+drop name_simplified top20 roma nobility fastgrow roma2 german slavic romanian commonjewishname german_broad slavic_broad romanian_broad nonref hun_ref endsi
+
+do create_name_groups.do
+
 
 gen count = 1
 
@@ -20,9 +24,9 @@ foreach collapsevar of varlist  y10 y5 year periods {
 
 preserve
 
-collapse (mean) german_share_in_law = german slavic_share_in_law = slavic romanian_share_in_law = romanian ///
-	 cjewishname_share_in_law = commonjewishname german_broad_share_in_law = german_broad  ///
-	 slavic_broad_share_in_law = slavic_broad romanian_broad_share_in_law = romanian_broad  ///
+collapse (mean) grmn_share_in_law = german slv_share_in_law = slavic rmn_share_in_law = romanian ///
+	 cjn_share_in_law = commonjewishname grmn_broad_share_in_law = german_broad  ///
+	 slv_broad_share_in_law = slavic_broad rmn_broad_share_in_law = romanian_broad  ///
 	 noble_share_in_law = nobility top20_share_in_law = top20 roma_share_in_law = roma endsi_share_in_law = endsi  ///
 	 hunref_share_in_law = hun_ref ///
 	 roma2_share_in_law = roma2 ///
@@ -31,6 +35,7 @@ collapse (mean) german_share_in_law = german slavic_share_in_law = slavic romani
 	 lowstat_share_in_law = lowstat ///
 	 highstat_share_in_law = highstat ///
 	 doc50_share_in_law = doc50 ///
+	 gerjewsla_share_in_law = gerjewsla ///
 	 (sum)  law_count = count law_noble_count = nobility  , by(`collapsevar')
 	 
 

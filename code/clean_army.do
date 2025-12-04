@@ -229,12 +229,13 @@ foreach collapsevar of varlist  y10 y5 year periods {
 
 preserve
 
-collapse (mean) german_share_in_officers = german slavic_share_in_officers = slavic romanian_share_in_officers = romanian ///
-	 cjewishname_share_in_officers = commonjewishname german_broad_share_in_officers = german_broad  ///
-	 slavic_broad_share_in_officers = slavic_broad romanian_broad_share_in_officers = romanian_broad  ///
+collapse (mean) grmn_share_in_officers = german slv_share_in_officers = slavic rmn_share_in_officers = romanian ///
+	 cjn_share_in_officers = commonjewishname grmn_broad_share_in_officers = german_broad  ///
+	 slv_broad_share_in_officers = slavic_broad rmn_broad_share_in_officers = romanian_broad  ///
 	 noble_share_in_officers = nobility top20_share_in_officers = top20 roma_share_in_officers = roma endsi_share_in_officers = endsi  ///
 	 hunref_share_in_officers = hun_ref ///
 	 roma2_share_in_officers = roma2 ///
+	 gerjewsla_share_in_officers = gerjewsla ///
 	 (sum)  officer_count = count officer_noble_count = nobility  , by(`collapsevar')
 	
 

@@ -26,7 +26,7 @@ gen german = 0
 gen slavic = 0
 gen romanian = 0
 gen commonjewishname=0
-
+gen magyarisation_list=0
 
 
 * top100 names of Jewish holocaust victims without Hungarian names 
@@ -114,7 +114,7 @@ foreach s in "Bader" "Bader" "Bäder" "Pader" "Padar" "Padar" "Padar" ///
 	"Beck" "Bek" "Bekk" "Bek" "Bäck" "Back" /// 
 	"Becker" "Bekker" "Bäcker" "Backer" "Becher" "Pecker" "Pekker" /// 
 	"Berger" "Bergel" "Bergely" "Belger" "Perger" "Pergel" "Pergely" /// 
-	"B ohm" "Bohm" "B om" "Bom" "B omh" "Bomh" "B ohn" "Bohm" "Boehm" /// 
+	"B ohm" "Bohm" "Bom" "Bom" "Bomh" "Bomh" "Bohn" "Bohm" "Boehm" /// 
 	"Braun" "Braum" "Brun" "Brunn" "Brunn" "Brunn" /// 
 	"Brunner" "Bruner" "Prunner" "Pruner" "Pruner" "Brunner" "Brunner" /// 
 	"Czigler" "Cigler" "Zigler" "Ziegler" "Cziegler" /// 
@@ -155,9 +155,9 @@ foreach s in "Bader" "Bader" "Bäder" "Pader" "Padar" "Padar" "Padar" ///
 	"Kaltenekker" "Kaltenecker" "Kalteneker" "Kaltenicker" "Kaltanecker" "Kaltaneker" "Kaltneker" "Kaldenekker" "Kaldenecker" "Kaldeneker" "Kaldeneckker" "Kaldeneczker" "Kaldenneker" "Kaldennekker" /// 
 	"Keller" "Keler" "Koller" "Kellar" "Kellert" "Kelner" "Kellner" "Kelnar" /// 
 	"Kern" "Korn" "Kirn" /// 
-	"Keszler" "Kesler" "Kessler" "Kestler" "Kesztler" "K oszler" "K osztler" "K ossler" "K ostler" "Kiszler" "Geszler" "Gesler" /// 
+	"Keszler" "Kesler" "Kessler" "Kestler" "Kesztler" "Koszler" "Kosztler" "Kossler" "Kostler" "Kiszler" "Geszler" "Gesler" /// 
 	"Klein" "Kleine" "Klain" "Klajn" /// 
-	"Koch" "Koch" "Koh" "Koh" "Kock" "Kok" "Kok" "Kokk" "Coc" "Cok" "K ock" "K ok" /// 
+	"Koch" "Koch" "Koh" "Koh" "Kock" "Kok" "Kok" "Kokk" "Coc" "Cok" "Kock" "Kok" /// 
 	"Koller" "Koller" /// 
 	"Kramer" "Kramer" "Krämer" "Krammer" "Krammer" "Krämmer" "Krammel" "Kremer" /// 
 	"Kremer" "Kremmer" /// 
@@ -171,15 +171,15 @@ foreach s in "Bader" "Bader" "Bäder" "Pader" "Padar" "Padar" "Padar" ///
 	"Majer" "Majer" "Mayer" "Mayer" "Mayr" "Maier" "Mayher" "Mayherr" "Meyer" /// 
 	"Mejer" "Meijer" /// 
 	"Mozer" "Mojzer" "Mozer" "Moser" "Moser" "Moser" "M oser" /// 
-	"Muller" "Muller" "Mullher" "Miller" "M oller" "Moller" "Mullner" "Mulner" "Mullner" "Millner" "Milner" /// 
+	"Muller" "Muller" "Mullher" "Miller" "Moller" "Moller" "Mullner" "Mulner" "Mullner" "Millner" "Milner" /// 
 	"Pfeifer" "Pfeiffer" "Pfejfer" "Pfeffer" "Pfiffer" "Pfaifer" "Pfaiffer" "Peifeer" "Peffer" "Peiper" "Feifer" "Feiffer" "Fejfer" /// 
 	"Piller" "Piller" "Piler" "Pieller" "Pieler" "Pillar" "Pilar" "Pilar" /// 
 	"Richter" "Rikter" /// 
-	"Roth" "Roth" "Rot" "Rot" "Rott" "Rott" "Rauth" "R oth" "Roth" "Rot" "Rott" /// 
+	"Roth" "Roth" "Rot" "Rot" "Rott" "Rott" "Rauth" "Roth" "Roth" "Rot" "Rott" /// 
 	"Rozman" "Rozman" "Rozmann" "Rozman" "Roszmann" "Roszman" "Rosman" "Rosmann" /// 
 	"Rossman" "Rossmann" /// 
 	"Ruff" "Ruf" /// 
-	"Scheffer" "Schäffer" "Schäfer" "Scheffer" "Schefer" "Schefer" "Schaeffer" "Schaeffer" "Schaefer" /// 
+	"Scheffer" "Schäffer" "Schäfer" "Schaffer" "Schafer" "Scheffer" "Schefer" "Schefer" "Schaeffer" "Schaeffer" "Schaefer" /// 
 	"Seffer" "Sefer" "Seffer" "Sefer" "Seper" /// 
 	"Schmidt" "Schmidth" "Schmid" "Schmidt" "Schmitt" "Schmied" "Smied" "Schmiedt" "Smidt" /// 
 	"Smidth" "Smit" "Smith" "Smitt" "Smid" /// 
@@ -200,7 +200,7 @@ foreach s in "Bader" "Bader" "Bäder" "Pader" "Padar" "Padar" "Padar" ///
 	"Vinkler" "Winkler" "Vinkler" /// 
 	"Wagner" "Wagner" "Vagner" "Vagner" /// 
 	"Weber" "Weeber" "Wieber" "Veber" "Veber" "Weber" "Webber" /// 
-	"Wolf" "Wolff" "Wollf" "W olf" "W olff" "Wulf" "Wulff" "Volf"  {
+	"Wolf" "Wolff" "Wollf" "Wolf" "Wolff" "Wulf" "Wulff" "Volf"  {
 
 	
 	replace german=1 if `1'=="`s'" & commonjewishname==0
@@ -301,6 +301,15 @@ foreach s in "Aleksza" "Alexa" "Aleksa" "Alaksza" "Alaksa" "Oleksza" "Olexa" "Ol
 }
 
 
+foreach s in "Abander" "Abt" "Achim" "Acht" "Achtum" "Ackermann" "Adamoczki" "Aigner" "Albecker" "Albert" "Albitz" "Almann" "Ament" "Amrein" "Amsel" "Andele" "Anderlik" "Angermann" "Antl" "Artinger" "Aschenbrenner" "Assmann" "Auer" "Auerbach" "Auffenberg" "Aufmuth" "Augner" "Babijak" "Bach" "Baches" "Backstadter" "Bader" "Baldauf" "Bamberger" "Bartolf" "Bartolff" "Bauer" "Baumann" "Baumgartner" "Baumgartner" "Baumler" "Bayer" "Bayer" "Beck" "Beck" "Becker" "Beile" "Bejcek" "Belenyak" "Belsius" "Bencik" "Bendpak" "Benke" "Benkert" "Benkner" "Berger" "Bernhard" "Bernstein" "Bertsche" "Bertl" "Bertschi" "Betzner" "Bier" "Bierbauer" "Bierbrauer" "Biesinger" "Bissinger" "Bilder" "Binder" "Biermann" "Bischitz" "Bischof" "Bittenbinder" "Bittner" "Blasko" "Blaszko" "Bleyer" "Bloch" "Blum" "Blumenschein" "Blumental" "Bock" "Boda" "Bodemann" "Bohm" "Bohn" "Boncsek" "Borszuk" "Brachfeld" "Brambauer" "Brand" "Brandstatter" "Braun" "Brauer" "Brasberger" "Breier" "Brenner" "Brentano" "Brindzik" "Britvecz" "Bruckner" "Brull" "Bruncznieder" "Brunner" "Brust" "Brzobohati" "Bubelenyi" "Buchardt" "Buhhardt" "Buchgraber" "Buchner" "Buchwald" "Burghoffer" "Burst" "Buttel" "Cagany" "Celhan" "Celleng" "Chernak" "Chrismar" "Christ" "Christmann" "Csemann" "Csermanek" "Csiszler" "Czorn" "Zorn" "Dachs" "Danielovits" "Dein" "Demser" "Demus" "Deutsch" "Deutsch" "Deutsch" "Dewald" "Diener" "Dieter" "Dietsche" "Dietl" "Dietz" "Dietzgen" "Dobra" "Dobrovitz" "Dolak" "Dorn" "Dorner" "Draxler" "Drexler" "Drevenka" "Durst" "Dutko" "Dux" "Eberling" "Ebner" "Ebner" "Ecker" "Ecker" "Egermann" "Ehrenreiter" "Ehrlich" "Eibl" "Eichhardt" "Eichholz" "Eigner" "Eisen" "Eisenacker" "Eisenbarth" "Eisenhoffer" "Ellenbogen" "Engelbert" "Engelhardt" "Englert" "Englerth" "Engstner" "Eppel" "Erb" "Escandeli" "Falkonberg" "Fassbinder" "Faul" "Faulhaber" "Faustig" "Feger" "Fehrenthert-Gruppenberg" "Feil" "Felsmann" "Ferber" "Fernbach" "Fersch" "Ferwagner" "Fichtner" "Fieder" "Fiedler" "Filips" "Filsinger" "Fink" "Finster" "Firtl" "Fischer" "Fischer" "Flamich" "Fleckenstein" "Fleischmann" "Folk" "Follath" "Frank" "Frankl" "Freisinger" "Freistadtl" "Freud" "Freyberger" "Friebeiß" "Friedreich" "Frim" "Frischauf" "Fritsch" "Fritschek" "Fritz" "Frommer" "Fruhwirth" "Frummer" "Fuchs" "Fuchsberger" "Fuhrer" "Furst" "Fuß" "Gabel" "Galcik" "Gallik" "Gaidler" "Galler" "Ganz" "Gaschler" "Gauss" "Geist" "Georgi" "Gerhardt" "Geringer" "Gerstl" "Gerstmann" "Gerstner" "Gertswaller" "Getzler" "Geyer" "Gier" "Giergl" "Gießer" "Gilmayer" "Glitsch" "Glock" "Glutsch" "Glitsch" "Goebel" "Goldbecher" "Goldberger" "Goldhammer" "Goldmann" "Goldschmid" "Goldstein" "Golenyak" "Goller" "Golnhofer" "Gonauer" "Gorger" "Gottlieb" "Gottrich" "Graefl" "Gerstl" "Gobl" "Gorbitz" "Gregor" "Gregus" "Greguš" "Greitner" "Gress" "Grieser" "Grieshaber" "Grimm" "Grop" "Grosch" "Groschl" "Groß" "Groszmann" "Großschmid" "Großschmied" "Gruber" "Grun" "Grunbaum" "Grunfeld" "Grunstein" "Grunwald" "Grunzweig" "Gschmeidler" "Gschwandtner" "Gudra" "Gulden" "Gungl" "Gunther" "Gut" "Guth" "Guttmann" "Gyungya" "Gyurcsek" "Gyurcsik" "Haas" "Haaser" "Haaß" "Haberfeld" "Habony" "Hackl" "Hackspacher" "Hagemann" "Hahn" "Hak" "Halbschuh" "Halmer" "Haltmayer" "Hambach" "Hamburger" "Hammer" "Hampel" "Hando" "Handtel" "Hannes" "Happ" "Harrach" "Hart" "Hartlein" "Hartmann" "Hartstein" "Hasenfratz" "Hauer" "Hauptmann" "Hausknecht" "Hausmann" "Hautzinger" "Hauser" "Hechtl" "Heckler" "Heckmann" "Heer" "Heidelberg" "Heidinger" "Heilmann" "Heinemann" "Heinrich" "Heiser" "Helfer" "Hellebrandt" "Heller" "Heltau" "Heltebrand" "Helter" "Helth" "Hepp" "Herbst" "Hergenroder" "Herik" "Heringer" "Herklein" "Herling" "Hermann" "Hery" "Herzig" "Herzog" "Hess" "Hilpert" "Himmelstein" "Hinek" "Hinterscheck" "Hirsch" "Hirschl" "Hirschmann" "Hoch" "Hochhaus" "Hock" "Hoffmann" "Hofstatter" "Hohl" "Hohmann" "Holdampf" "Holzbauer" "Holzmann" "Holzmeister" "Horcher" "Horn" "Hory" "Hoschke" "Huber" "Hubert" "Hubl" "Hund" "Hundt" "Hoso" "Hugyec" "Hungler" "Hunsdorfer" "Huj" "Hupcik" "Hverda" "Ihracska" "Ispaits" "Ivanic" "Ivanski" "Jagedics" "Jager" "Jager" "Jahrmann" "Jahrmann" "Jamrik" "Janaroczki" "Jandl" "Janina" "Janus Pannonius" "Jelleke" "Jessenski" "Jilling" "Jobst" "Jorde" "Jung" "Junghans" "Kabda" "Kah" "Kahler" "Kaiser" "Kaizer" "Kaitan" "Kaltenbrunner" "Kaltenecker" "Kammerlauf" "Kampner" "Kann" "Kahn" "Kanzler" "Kapeller" "Kapp" "Kappenberger" "Kapplmayer" "Karner" "Kassner" "Katzenbach" "Kaufeld" "Kaufmann" "Kauker" "Kauremski" "Kauser" "Keil" "Keller" "Kellner" "Kempf" "Kenzler" "Kern" "Kerner" "Kerstner" "Khuen" "Kindler" "Kirchner" "Kirnbauer" "Kittenberger" "Klagyivik" "Klassek" "Klauber" "Klaus" "Klein" "Kleiner" "Klenner" "Klette" "Klettner" "Klimek" "Klinger" "Klitsch" "Klujber" "Knapp" "Knauß" "Kneiß" "Knipf" "Knoll" "Koder" "Koessler" "Kohaut" "Kohler" "Kohl" "Kohlberger" "Kohler" "Kohlmann" "Kohn" "Kollar" "Koller" "Konig" "Konrad" "Koppstein" "Korach" "Korn" "Kornfeld" "Korngut" "Kosch" "Kositzky" "Kracik" "Krakker" "Kral" "Kralik" "Kramer" "Kramer" "Krammerlauf" "Kranzinger" "Kassl" "Kramer" "Kratochwill" "Kraus" "Krauter" "Krebs" "Kreiner" "Kreis" "Kremsner" "Krenac" "Krenmuller" "Krenner" "Krepalek" "Kress" "Kretz" "Kriesch" "Krimpelbein" "Krippel" "Kriesinger" "Kristinkovic" "Krizsanovits" "Kronberger" "Kroneck" "Kroner" "Krug" "Kruhl" "Kudla" "Kuhl" "Kuhtreiber" "Kunczer" "Kungl" "Kunst" "Kunstler" "Kupfer" "Kupricz" "Kurz" "Kußbach" "Lack" "Lacka" "Lamperth" "Lang" "Langer" "Laub" "Laubert" "Lauter" "Lebenguth" "Lechner" "Leber" "Lederer" "Lee" "Lehmann" "Lehner" "Lehr" "Leicher" "Leimeister" "Leimeter" "Leinwater" "Leip" "Leiter" "Leitersdorfer" "Leitgeb" "Leitzinger" "Lenk" "Lenz" "Leopold" "Lerk" "Lerner" "Leszkovics" "Libertenyi" "Lichanec" "Lichtenecker" "Lichter" "Lieb" "Liebe" "Liebenberg" "Liebenberger" "Lieber" "Lindenmayer" "Lindwirm" "Ling" "Lingauer" "Lingl" "Link" "Lip" "Liptak" "Liskovski" "List" "Listner" "Litschauer" "Lobenwein" "Loffler" "Lofing" "Losteiner" "Luif" "Lung" "Luzenbacher" "Macc" "Mader" "Mahler" "Mahr" "Mailath" "Majdon" "Makso" "Malarik" "Maleth" "Mammel" "Mandel" "Mann" "Marek" "Markovic" "Marksteiner" "Marmorstein" "Marosan" "Martin" "Martinkovics" "Marx" "Marusan" "Masek" "Math" "Mathias" "Matheis" "Matz" "Maurer" "Mayer" "Meier" "Mayer-Rubcsics" "Meck" "Meckler" "Mehringer" "Meilinger" "Meiner" "Meinhardt" "Meinzinger" "Meister" "Melich" "Meliher" "Mensiger" "Mercz" "Merz" "Mergl" "Merk" "Merkert" "Merklein" "Meßner" "Metzger" "Meyer" "Miedner" "Mihalek" "Mikušcak" "Millich" "Milter" "Miltz" "Mistl" "Mittag" "Monger" "Moser" "Mosert" "Mraz" "Mrazik" "Muhr" "Mukahirn" "Muhl" "Muller" "Muller" "Muller" "Munk" "Munzer" "Musil" "Musto" "Naroda" "Narr" "Natta" "Navradi" "Navratil" "Neff" "Neidhardt" "Netzl" "Neumann" "Neumann" "Neuwirth" "Nick" "Nicolaides" "Nimpfer" "Noll" "Novak" "Nussbeck" "Nusser" "Oberritter" "Oesterreicher" "Oppenauer" "Oravetz" "Ortmayr" "Osl" "Osterbauer" "Ostertag" "Ostheimer" "Oxenmayer" "Ochsenmayer" "Pacnik" "Pajer" "Palica" "Pallavicini" "Palmer" "Pappert" "Payer" "Passmann" "Paulics" "Paus" "Pavelcze" "Peel" "Pehl" "Pehm" "Peltzer" "Pemsek" "Peng" "Pentz" "Penyaska" "Perger" "Perndl" "Peternics" "Petrich" "Petrovics" "Philips" "Pfandler" "Pfannschmidt" "Pfeffer" "Pfendtner" "Pfennig" "Pfer" "Pfister" "Pfistner" "Pfluger" "Pichler" "Pick" "Piller" "Pinczinger" "Pinczker" "Pinz" "Pichocker" "Pirint" "Plattner" "Platzer" "Pleva" "Pohl" "Pollich" "Poszpihal" "Potisek" "Preißberger" "Priegl" "Priska" "Primus" "Probstl" "Prossammer" "Pšenak" "Puchinger" "Pur" "Purgstaller" "Purzfeld" "Putz" "Quenz" "Quintz" "Rackh" "Radakovits" "Radankovits" "Reiner" "Rangoni" "Rapczok" "Rappensberger" "Rasch" "Rauch" "Rechner" "Redling" "Rehr" "Reich" "Reichenbach" "Reif" "Reindl" "Reinfort" "Reis" "Reiser" "Reisinger" "Reißner" "Reiter" "Reizinger" "Reperger" "Rehberger" "Resch" "Resner" "Rheinfuss" "Richter" "Richter" "Rieberger" "Riegler" "Rieß" "Rikker" "Rikter" "Rintel" "Rippl" "Ripsam" "Ritschmann" "Ritz" "Rohlich" "Rohrbacher" "Roll" "Roller" "Rosenfeld" "Rosenthal" "Rosenzweig" "Roskovics" "Rossmann" "Roth" "Rothauser" "Rothbaum" "Rotkrepf" "Rottenbiller" "Rottenbucher" "Ruck" "Ruckert" "Ruff" "Rumpel" "Ruzicska" "Sachs" "Saile" "Sam" "Samwald" "Santner" "Sass" "Sauerwein" "Sawel" "Sax" "Schabitz" "Schack" "Schaffer" "Schaffner" "Schaffrer" "Schalbert" "Schalk" "Schalkhammer" "Schalkhas" "Schalmayer" "Scharenpeck" "Schartz" "Scheck" "Schedel" "Scheff" "Scheffer" "Scheibelhoffer" "Scheiber" "Scheider" "Scheiling" "Schemiz" "Schenk" "Schenker" "Scherer" "Scherfleck" "Schermann" "Schettrer" "Scheuer" "Scheuring" "Schierling" "Schiff" "Schiller" "Schillinger" "Schilzong" "Schimert" "Schlegel" "Schleger" "Schlesinger" "Schlier" "Schlosser" "Schlotterberk" "Schmid" "Schmidt" "Schmierl" "Schmittauer" "Schmolz" "Schneider" "Schneller" "Schnellbach" "Schockl" "Schober" "Schobert" "Schoblocher" "Schoffer" "Scholtes" "Scholtz" "Schondl" "Schonbach" "Schenbach" "Schonbauer" "Schonberger" "Schonweis" "Schopf" "Schorn" "Schrank" "Schreck" "Schrock" "Schrempf" "Schrempner" "Schrenk" "Schriffert" "Schrock" "Schuck" "Schulhof" "Schuller" "Schuller" "Schultheiß" "Schunk" "Schussler" "Schuster" "Schuster" "Schutt" "Schutzenberger" "Schwab" "Schwalb" "Schwartz" "Schwarz" "Schwarz" "Schwarzel" "Schwarzer" "Schwartzkopf" "Schweier" "Schweiger" "Schweighofer" "Schweizer" "Schwertz" "Schwing" "Seelig" "Seemann" "Sehy" "Seibert" "Seibold" "Seidenleder" "Seidl" "Seiler" "Seili" "Seitz" "Seliger" "Semmelweis" "Seyer" "Sibiniani" "Sieber" "Siedl" "Simanek" "Singer" "Sinnreich" "Silberberg" "Silberstein" "Solomayer" "Sonnenberger" "Sonnenschein" "Sonntag" "Sopper" "Sorcik" "Sorik" "Spak" "Specht" "Spiegel" "Spielmann" "Spiller" "Spindl" "Spitzer" "Sprau" "Stadler" "Stahl" "Stampf" "Stand" "Stangl" "Stark" "Staß" "Staudinger" "Staudner" "Stefan" "Steiber" "Steigerwald" "Steinacker" "Steinbacher" "Steiner" "Steingassner" "Stenger" "Stephan" "Sterbenz" "Stern" "Steyerhoffer" "Stiller" "Stockl" "Stolar" "Stomp" "Storbeck" "Stramba" "Strasser" "Strassneff" "Straubinger" "Strauß" "Strba" "Streli" "Striebl" "Strigens" "Strobl" "Strohmayer" "Stroka" "Stroß" "Strumpf" "Studer" "Stulfa" "Stummer" "Stumpf" "Sturtz" "Stummer" "Subic" "Sumser" "Sused" "Szapucsek" "Szedlak" "Szeidenleder" "Szieber" "Sziedl" "Szloboda" "Szopper" "Sztraska" "Tagscherer" "Tahony" "Tallmayer" "Tannenbaum" "Tannhauser" "Tanner" "Tanzer" "Taugner" "Tauser" "Taussig" "Teichengraber" "Teichter" "Teigler" "Telch" "Theiler" "Theiß" "Thurmayer" "Tiegelmann" "Tilesch" "Tischler" "Tischner" "Titzl" "Tofeus" "Tomek" "Tonigold" "Tossenberger" "Toth" "Trabert" "Trajbiar" "Trankler" "Trautmann" "Trautner" "Trebes" "Treiber" "Tremmel" "Trenka" "Trethan" "Tressel" "Tretter" "Tricad" "Tringer" "Trisner" "Tripammer" "Trischler" "Trostler" "Tunkel" "Ulicka" "Umek" "Utz" "Uitz" "Ultenmuller" "Unternehrer" "Vamberger" "Vanczer" "Vanek" "Vater" "Vavrek" "Veigli" "Veigelsberg" "Venetianer" "Verhas" "Vessely" "Vilimi" "Viskardi" "Vopicka" "Vogel" "Vogelsinger" "Volum" "Wachsmann" "Wachtelschneider" "Wagner" "Walper" "Wamberger" "Wanzer" "Weber" "Webermann" "Wech" "Wederlehner" "Weigel" "Weigl" "Weiler" "Weimer" "Weinberger" "Weinper" "Weiß" "Weißhaar" "Weißwasser" "Welmer" "Weltner" "Wentz" "Werstroh" "Wesan" "Wesner" "Wiedmann" "Wiegler" "Wiesner" "Wildanger" "Wildschutz" "Wilhelm" "Windauer" "Windischmann" "Winkler" "Wirth" "Wiskidensky" "Wittmann" "Wittwindisch" "Wolf" "Wolff" "Wollner" "Wuhrl" "Wunder" "Wurth" "Zapotnik" "Zehetmayer" "Zeitler" "Zeller" "Zelmann" "Zemmel" "Zenger" "Zepf" "Ziegelbach" "Ziegler" "Ziegler" "Ziegelmaier" "Zierbusch" "Zierfuß" "Zima" "Zirkelbach" "Zirner" "Zogler" "Zsidakovits" "Zullich" "Zwick" "Beyer" "Freund" "Hory" "Keizer" "Kail" "Kripl" "Mejer" "Reisser" "Sahm" "Seeliger" {
+	
+	
+		replace magyarisation_list=1 if `1'=="`s'" & commonjewishname==0 & german==0 & slavic==0 // a list of German, Jewish and Slavic surnames which were magyarised (from a document)
+
+	
+}
+
+
 
 foreach s in "Argyelan" "Argyelan" "Argyellan" "Argyellan" "Argyilan" "Argyilan" "Ardelan" "Ardelan" "Ardelean" "Ardelean" "Ardelean" ///
 	"Krizsan" "Krizsan" "Krisan" "Krisan" "Krizsany" "Kirizsan" "Crisan" "Crisan" "Crijan" ///
@@ -319,9 +328,9 @@ gen slavic_broad=slavic
 gen romanian_broad=romanian
 
 * jolly joker: names ending in *er and *mann with some frequent Hungarian exceptions
-replace german_broad=1 if substr(`1',-2,2)=="er"&`1'!="Cser"&`1'!="Mester"&`1'!="Peter"&commonjewishname!=1
-replace german_broad=1 if substr(`1',-4,4)=="mann"&`1'!="Cser"&`1'!="Mester"&`1'!="Peter"&commonjewishname!=1
-replace german_broad=1 if substr(`1',-3,3)=="man"&`1'!="Cser"&`1'!="Mester"&`1'!="Peter"&commonjewishname!=1
+replace german_broad=1 if substr(`1',-2,2)=="er"&`1'!="Cser"&`1'!="Mester"&`1'!="Peter" & commonjewishname!=1
+replace german_broad=1 if substr(`1',-4,4)=="mann"&`1'!="Cser"&`1'!="Mester"&`1'!="Peter" & commonjewishname!=1
+replace german_broad=1 if substr(`1',-3,3)=="man"&`1'!="Cser"&`1'!="Mester"&`1'!="Peter" & commonjewishname!=1
 
 * jolly joker: "-ics" & "-k" & exeptions
 replace slavic_broad=1 if substr(`1',-2,2)=="ik"&`1'!="Deak"&`1'!="Elek"&`1'!="Csik"&`1'!="Csik"&`1'!="Izsak"&`1'!="Ersek"&`1'!="Telek"&`1'!="Mak"&`1'!="Fridrich"&`1'!="Ehrlich"&`1'!="Rak"
