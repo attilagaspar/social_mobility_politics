@@ -49,56 +49,42 @@ local busvar = "log_relative_rep_top20_bus"
 
 
 * AUSTRIA-HUNGARY
-twoway 	(lfit `drvar' y10 if y10<1925&y10>=1840, `doctors_pred' range(1870 2020) ) ///
+twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020) ) ///
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 2020)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2000)) ///
         (lfit `repvar' y10 if y10<1925&y10>=1870, `mps_pred' range(1870 2020)) ///
 		(lfit `officervar' y10 if y10<1925&y10>=1870, `officers_pred' range(1870 1970) ) ///
-(connected `drvar' y10 if y10<1925, `doctors' ) ///
+(connected `drvar' y10 if y10<1925&y10>=1870, `doctors' ) ///
         (connected `lawvar'  y10 if y10<1925&y10>=1870, `lawyers'  ) ///
         (connected `busvar' y10 if y10<1925&y10>=1870, `business' ) ///
         (connected `repvar' y10 if y10<1925&y10>=1870, `mps' ) ///
 		(connected `officervar' y10 if y10<1925&y10>=1870, `officers' ) ///
-					(connected `drvar' y10 if y10==1855|y10==1865, `doctors' ) ///
-					(connected `repvar' y10 if y10==1855|y10==1865, `mps' ) ///
-			(connected `drvar' y10 if y10==1845, `doctors' ) ///
-			(connected `repvar' y10 if y10==1845, `mps' ) ///
-				(connected `drvar' y10 if y10<1840, `doctors' ) ///
-			    (connected `repvar' y10 if y10<1840, `mps' ) ///
-				(connected `officervar' y10 if y10<1870, `officers' ) ///
 ,     text(-2.30 1895 "Austria-Hungary", place(c) size(small)) text(-2.2 1933 "Horthy-", place(c) size(small))  text(-2.30 1933 "regency", place(c) size(small)) ///lace(c) size(small)) ///
     text(-2.30 1967 "Communism", place(c) size(small)) text(-2.30 2005 "3rd Republic", place(c) size(small)) ///
 	    text(-2.30 1830 "Habsburg Empire", place(c) size(small))  ///
 	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
 legend(order(1 "Medical students" 2 "Law students" 3 "Chief Executives" 4 "Members of Parliament" 5 "Army Officers") pos(6) row(2) col(3)) ///
-xlabel(1780 "1780" 1790 "90" 1800 "1800" 1810 "10" 1820 "20" 1830 "30" 1840 "40" 1850 "50" 1860 "60"   1870 "70"  1880 "80"  1890 "90" ///
+xlabel(   1870 "70"  1880 "80"  1890 "90" ///
 1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
 2000 "2000" 2010 "10" 2020 "20") ylabel(-2.30 "0.1" -1.61 "0.2"  -.916 "0.4"  -.22 "0.8" 0 "1")  ///
 ytitle("Relative representation" "(log scale)") title("Top 20 most frequent names") subtitle("Decade averages")  xtitle("Decade") ///
-xline(1867 1919 1944 1989)
+xline(1919 1944 1989)
 
 
 graph export `1'_step2.pdf, replace
 graph export `1'_step2.png, replace
 
 
-twoway 	(lfit `drvar' y10 if y10<1925&y10>=1840, `doctors_pred' range(1870 2020) ) ///
+twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020) ) ///
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 2020)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2000)) ///
         (lfit `repvar' y10 if y10<1925&y10>=1870, `mps_pred' range(1870 2020)) ///
 		(lfit `officervar' y10 if y10<1925&y10>=1870, `officers_pred' range(1870 1970) ) ///
-(connected `drvar' y10 if y10<1925, `doctors' ) ///
+(connected `drvar' y10 if y10<1925&y10>=1870, `doctors' ) ///
         (connected `lawvar'  y10 if y10<1925&y10>=1870, `lawyers'  ) ///
         (connected `busvar' y10 if y10<1925&y10>=1870, `business' ) ///
         (connected `repvar' y10 if y10<1925&y10>=1870, `mps' ) ///
 		(connected `officervar' y10 if y10<1925&y10>=1870, `officers' ) ///
-					(connected `drvar' y10 if y10==1855|y10==1865, `doctors' ) ///
-					(connected `repvar' y10 if y10==1855|y10==1865, `mps' ) ///
-			(connected `drvar' y10 if y10==1845, `doctors' ) ///
-			(connected `repvar' y10 if y10==1845, `mps' ) ///
-				(connected `drvar' y10 if y10<1840, `doctors' ) ///
-			    (connected `repvar' y10 if y10<1840, `mps' ) ///
-				(connected `officervar' y10 if y10<1870, `officers' ) ///
 (connected `drvar' y10 if y10==1925|y10==1935|y10==1945 , `doctors') ///
         (connected `lawvar'  y10  if y10==1925|y10==1935|y10==1945, `lawyers' ) ///
         (connected `busvar' y10  if y10==1925|y10==1935|y10==1945, `business') ///
@@ -109,11 +95,11 @@ twoway 	(lfit `drvar' y10 if y10<1925&y10>=1840, `doctors_pred' range(1870 2020)
 	    text(-2.30 1830 "Habsburg Empire", place(c) size(small))  ///
 	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
 legend(order(1 "Medical students" 2 "Law students" 3 "Chief Executives" 4 "Members of Parliament" 5 "Army Officers") pos(6) row(2) col(3)) ///
-xlabel(1780 "1780" 1790 "90" 1800 "1800" 1810 "10" 1820 "20" 1830 "30" 1840 "40" 1850 "50" 1860 "60"   1870 "70"  1880 "80"  1890 "90" ///
+xlabel(   1870 "70"  1880 "80"  1890 "90" ///
 1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
 2000 "2000" 2010 "10" 2020 "20") ylabel(-2.30 "0.1" -1.61 "0.2"  -.916 "0.4"  -.22 "0.8" 0 "1")  ///
 ytitle("Relative representation" "(log scale)") title("Top 20 most frequent names") subtitle("Decade averages")  xtitle("Decade") ///
-xline(1867 1919 1944 1989)
+xline(1919 1944 1989)
 
 
 graph export `1'_step3.pdf, replace
@@ -124,23 +110,16 @@ graph export `1'_step3.png, replace
 
 
 
-twoway 		(lfit `drvar' y10 if y10<1925&y10>=1840, `doctors_pred' range(1870 2020) ) ///
+twoway 		(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020) ) ///
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 2020)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2000)) ///
         (lfit `repvar' y10 if y10<1925&y10>=1870, `mps_pred' range(1870 2020)) ///
 		(lfit `officervar' y10 if y10<1925&y10>=1870, `officers_pred' range(1870 1970) ) ///
-		(connected `drvar' y10 if y10<1925, `doctors' ) ///
+		(connected `drvar' y10 if y10<1925&y10>=1870, `doctors' ) ///
         (connected `lawvar'  y10 if y10<1925&y10>=1870, `lawyers'  ) ///
         (connected `busvar' y10 if y10<1925&y10>=1870, `business' ) ///
         (connected `repvar' y10 if y10<1925&y10>=1870, `mps' ) ///
 		(connected `officervar' y10 if y10<1925&y10>=1870, `officers' ) ///
-					(connected `drvar' y10 if y10==1855|y10==1865, `doctors' ) ///
-					(connected `repvar' y10 if y10==1855|y10==1865, `mps' ) ///
-			(connected `drvar' y10 if y10==1845, `doctors' ) ///
-			(connected `repvar' y10 if y10==1845, `mps' ) ///
-				(connected `drvar' y10 if y10<1840, `doctors' ) ///
-			    (connected `repvar' y10 if y10<1840, `mps' ) ///
-				(connected `officervar' y10 if y10<1870, `officers' ) ///
 (connected `drvar' y10 if y10==1925|y10==1935|y10==1945 , `doctors') ///
         (connected `lawvar'  y10  if y10==1925|y10==1935|y10==1945, `lawyers' ) ///
         (connected `busvar' y10  if y10==1925|y10==1935|y10==1945, `business') ///
@@ -157,34 +136,27 @@ twoway 		(lfit `drvar' y10 if y10<1925&y10>=1840, `doctors_pred' range(1870 2020
 	    text(-2.30 1830 "Habsburg Empire", place(c) size(small))  ///
 	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
 legend(order(1 "Medical students" 2 "Law students" 3 "Chief Executives" 4 "Members of Parliament" 5 "Army Officers") pos(6) row(2) col(3)) ///
-xlabel(1780 "1780" 1790 "90" 1800 "1800" 1810 "10" 1820 "20" 1830 "30" 1840 "40" 1850 "50" 1860 "60"   1870 "70"  1880 "80"  1890 "90" ///
+xlabel(   1870 "70"  1880 "80"  1890 "90" ///
 1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
 2000 "2000" 2010 "10" 2020 "20") ylabel(-2.30 "0.1" -1.61 "0.2"  -.916 "0.4"  -.22 "0.8" 0 "1")  ///
 ytitle("Relative representation" "(log scale)") title("Top 20 most frequent names") subtitle("Decade averages")  xtitle("Decade") ///
-xline(1867 1919 1944 1989)
+xline(1919 1944 1989)
 
 
 graph export `1'_step4.pdf, replace
 graph export `1'_step4.png, replace
 
 
-twoway 	(lfit `drvar' y10 if y10<1925&y10>=1840, `doctors_pred' range(1870 2020) ) ///
+twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 2020) ) ///
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 2020)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2000)) ///
         (lfit `repvar' y10 if y10<1925&y10>=1870, `mps_pred' range(1870 2020)) ///
 		(lfit `officervar' y10 if y10<1925&y10>=1870, `officers_pred' range(1870 1970) ) ///
-		(connected `drvar' y10 if y10<1925, `doctors' ) ///
+		(connected `drvar' y10 if y10<1925&y10>=1870, `doctors' ) ///
         (connected `lawvar'  y10 if y10<1925&y10>=1870, `lawyers'  ) ///
         (connected `busvar' y10 if y10<1925&y10>=1870, `business' ) ///
         (connected `repvar' y10 if y10<1925&y10>=1870, `mps' ) ///
 		(connected `officervar' y10 if y10<1925&y10>=1870, `officers' ) ///
-					(connected `drvar' y10 if y10==1855|y10==1865, `doctors' ) ///
-					(connected `repvar' y10 if y10==1855|y10==1865, `mps' ) ///
-			(connected `drvar' y10 if y10==1845, `doctors' ) ///
-			(connected `repvar' y10 if y10==1845, `mps' ) ///
-				(connected `drvar' y10 if y10<1840, `doctors' ) ///
-			    (connected `repvar' y10 if y10<1840, `mps' ) ///
-				(connected `officervar' y10 if y10<1870, `officers' ) ///
 (connected `drvar' y10 if y10==1925|y10==1935|y10==1945 , `doctors') ///
         (connected `lawvar'  y10  if y10==1925|y10==1935|y10==1945, `lawyers' ) ///
         (connected `busvar' y10  if y10==1925|y10==1935|y10==1945, `business') ///
@@ -206,11 +178,11 @@ twoway 	(lfit `drvar' y10 if y10<1925&y10>=1840, `doctors_pred' range(1870 2020)
 	    text(-2.30 1830 "Habsburg Empire", place(c) size(small))  ///
 	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
 legend(order(1 "Medical students" 2 "Law students" 3 "Chief Executives" 4 "Members of Parliament" 5 "Army Officers") pos(6) row(2) col(3)) ///
-xlabel(1780 "1780" 1790 "90" 1800 "1800" 1810 "10" 1820 "20" 1830 "30" 1840 "40" 1850 "50" 1860 "60"   1870 "70"  1880 "80"  1890 "90" ///
+xlabel(   1870 "70"  1880 "80"  1890 "90" ///
 1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
 2000 "2000" 2010 "10" 2020 "20") ylabel(-2.30 "0.1" -1.61 "0.2"  -.916 "0.4"  -.22 "0.8" 0 "1")  ///
 ytitle("Relative representation" "(log scale)") title("Top 20 most frequent names") subtitle("Decade averages")  xtitle("Decade") ///
-xline(1867 1919 1944 1989)
+xline(1919 1944 1989)
 
 
 

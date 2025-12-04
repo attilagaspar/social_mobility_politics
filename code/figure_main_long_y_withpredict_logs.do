@@ -67,11 +67,11 @@ twoway 	(lfit `drvar' y10 if y10<1925&y10>=1860, `doctors_pred' range(1870 1940)
     text(-.69 1967 "Communism", place(c) size(small)) text(-.69 2005 "3rd Republic", place(c) size(small)) ///
 	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
 legend(order(1 "Medical students" 2 "Law students" 3 "Chief Executives" 4 "Members of Parliament" 5 "Army Officers") pos(6) row(2) col(3)) ///
-xlabel( 1860 "60"   1870 "70"  1880 "80"  1890 "90" ///
+xlabel(   1870 "70"  1880 "80"  1890 "90" ///
 1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
 2000 "2000" 2010 "10" 2020 "20")  ylabel(-.68 " " -.69 "0.5" 0"1" .69 "2" 1.39 "4" 2.08 "8" 2.77 "16")  ///
 ytitle("Relative representation" "(log scale)") title("-y names") subtitle("Decade averages")  xtitle("Decade") ///
-xline(1867 1919 1944 1989)
+ xline(1919 1944 1989)
 
 
 graph export `1'_step2.pdf, replace
@@ -100,11 +100,11 @@ twoway  (lfit `drvar' y10 if y10<1925&y10>=1860, `doctors_pred' range(1870 1940)
     text(-.69 1967 "Communism", place(c) size(small)) text(-.69 2005 "3rd Republic", place(c) size(small)) ///
 	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
 legend(order(1 "Medical students" 2 "Law students" 3 "Chief Executives" 4 "Members of Parliament" 5 "Army Officers") pos(6) row(2) col(3)) ///
-xlabel( 1860 "60"   1870 "70"  1880 "80"  1890 "90" ///
+xlabel(   1870 "70"  1880 "80"  1890 "90" ///
 1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
 2000 "2000" 2010 "10" 2020 "20")  ylabel(-.68 " " -.69 "0.5" 0"1" .69 "2" 1.39 "4" 2.08 "8" 2.77 "16")  ///
 ytitle("Relative representation" "(log scale)") title("-y names") subtitle("Decade averages")  xtitle("Decade") ///
-xline(1867 1919 1944 1989)
+ xline(1919 1944 1989)
 
 
 
@@ -140,11 +140,11 @@ twoway 	(lfit `drvar' y10 if y10<1925&y10>=1860, `doctors_pred' range(1870 1940)
     text(-.69 1967 "Communism", place(c) size(small)) text(-.69 2005 "3rd Republic", place(c) size(small)) ///
 	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
 legend(order(1 "Medical students" 2 "Law students" 3 "Chief Executives" 4 "Members of Parliament" 5 "Army Officers") pos(6) row(2) col(3)) ///
-xlabel( 1860 "60"   1870 "70"  1880 "80"  1890 "90" ///
+xlabel(   1870 "70"  1880 "80"  1890 "90" ///
 1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
 2000 "2000" 2010 "10" 2020 "20")  ylabel(-.68 " " -.69 "0.5" 0"1" .69 "2" 1.39 "4" 2.08 "8" 2.77 "16")  ///
 ytitle("Relative representation" "(log scale)") title("-y names") subtitle("Decade averages")  xtitle("Decade") ///
-xline(1867 1919 1944 1989)
+ xline(1919 1944 1989)
 
 
 graph export `1'_step4.pdf, replace
@@ -182,11 +182,11 @@ twoway 	(lfit `drvar' y10 if y10<1925&y10>=1860, `doctors_pred' range(1870 1940)
     text(-.69 1967 "Communism", place(c) size(small)) text(-.69 2005 "3rd Republic", place(c) size(small)) ///
 	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
 legend(order(1 "Medical students" 2 "Law students" 3 "Chief Executives" 4 "Members of Parliament" 5 "Army Officers") pos(6) row(2) col(3)) ///
-xlabel( 1860 "60"   1870 "70"  1880 "80"  1890 "90" ///
+xlabel(   1870 "70"  1880 "80"  1890 "90" ///
 1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
 2000 "2000" 2010 "10" 2020 "20")  ylabel(-.68 " " -.69 "0.5" 0"1" .69 "2" 1.39 "4" 2.08 "8" 2.77 "16")  ///
 ytitle("Relative representation" "(log scale)") title("-y names") subtitle("Decade averages")  xtitle("Decade") ///
-xline(1867 1919 1944 1989)
+ xline(1919 1944 1989)
 
 
 graph export `1'.pdf, replace
