@@ -50,7 +50,7 @@ local repvar = "log_relative_rep_noble_reps"
 local busvar = "log_relative_rep_noble_bus"
 
 
-
+/*
 
 twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 1940) ) ///
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 1990)) ///
@@ -167,7 +167,7 @@ ytitle("Relative representation" "(log scale)") title("-y names") subtitle("Deca
  
  graph export ../figures/ynames_stepwise_5.pdf, replace
 graph export ../figures/ynames_stepwise_5.png, replace
- 
+
 twoway 	(lfit `drvar' y10 if y10<1925&y10>=1870, `doctors_pred' range(1870 1940) ) ///
         (lfit `lawvar'  y10 if y10<1925&y10>=1870, `lawyers_pred'  range(1870 1990)) ///
         (lfit `busvar' y10 if y10<1925&y10>=1870, `business_pred' range(1870 2010)) ///
@@ -190,3 +190,64 @@ ytitle("Relative representation" "(log scale)") title("-y names") subtitle("Deca
 
 graph export ../figures/ynames_stepwise_6.pdf, replace
 graph export ../figures/ynames_stepwise_6.png, replace
+ */
+
+
+* Fill in UK_oxbridge (Series A from Figure 1)
+gen UK_oxbridge = .
+replace UK_oxbridge = 18   if y10 == 1805
+replace UK_oxbridge = 12   if y10 == 1835
+replace UK_oxbridge = 8    if y10 == 1865
+replace UK_oxbridge = 5    if y10 == 1895
+replace UK_oxbridge = 3.5  if y10 == 1925
+replace UK_oxbridge = 2    if y10 == 1955
+replace UK_oxbridge = 1.5  if y10 == 1985
+replace UK_oxbridge = 1.3  if y10 == 2015
+
+* Fill in UK_MP (Series B from Figure 2)
+gen UK_MP = .
+replace UK_MP = 16   if y10 == 1835
+replace UK_MP = 12   if y10 == 1865
+replace UK_MP = 9    if y10 == 1895
+replace UK_MP = 6    if y10 == 1925
+replace UK_MP = 3.5  if y10 == 1955
+replace UK_MP = 3    if y10 == 1985
+replace UK_MP = 2    if y10 == 2015
+
+gen log_UK_MP = log(UK_MP)
+gen log_UK_oxbridge = log(UK_oxbridge)
+
+
+local doctors_pred = "lcolor(blue) lwidth(thick) msymbol(diamond) mcolor(blue) lpattern(solid)"
+local mps_pred = "lcolor(red) lwidth(thick) msymbol(diamond) mcolor(red) lpattern(solid)"
+
+
+twoway 	(connected log_UK_oxbridge y10  , `doctors_pred'  ) ///
+        (connected log_UK_MP y10 , `mps_pred' ) ///
+		,   ///
+legend(order(1 "Oxbridge students" 2 "British MPs"  ) pos(6) row(1) col(2)) ///
+xlabel(1780 "1780" 1790 "90"  1800 "1800" 1810 "10" 1820 "20" 1830 "30" 1840 "40" 1850 "50" 1860 "60" 1870 "70"  1880 "80"  1890 "90" ///
+1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
+2000 "2000" 2010 "10" 2020 "20")  ylabel(-.68 " " -.69 "0.5" 0"1" .69 "2" 1.39 "4" 2.08 "8" 2.77 "16")  ///
+ytitle("Relative representation" "(log scale)") title("Eliteness of rare British surnames (Clark et al. 2015)") xtitle("Decade") 
+ 
+graph export ../figures/uk.pdf, replace
+
+
+twoway 	(connected log_UK_oxbridge y10  , `doctors_pred'  ) ///
+        (connected log_UK_MP y10 , `mps_pred' ) ///
+		(connected `drvar' y10 , `doctors' ) ///
+        (connected `repvar' y10 , `mps' ) ///
+		,     text(-.69 1825 "Habsburg Empire", place(c) size(small))  ///
+   text(-.69 1895 "Austria-Hungary", place(c) size(small)) text(-0.54 1933 "Horthy", place(c) size(small)) text(-.69 1933 "regency", place(c) size(small)) ///
+    text(-.69 1967 "Communism", place(c) size(small)) text(-.69 2005 "3rd Republic", place(c) size(small)) ///
+	text(9 1865 "Absolutism", place(c) size(small)) text(4.5 1845 "Revolution", place(c) size(small)) ///
+legend(order(1 "Oxbridge students" 2 "British MPs" 3 "Hungarian medical students" 4 "Hungarian MPs" ) pos(6) row(1) col(4)) ///
+xlabel(1780 "1780" 1790 "90"  1800 1810 "10" 1820 "20" 1830 "30" 1840 "40" 1850 "50" 1860 "60" 1870 "70"  1880 "80"  1890 "90" ///
+1900 "1900" 1910 "10" 1920 "20" 1930 "30" 1940 "40"  1950 "50"  1960 "60"  1970 "70"  1980 "80"  1990 "90" ///
+2000 "2000" 2010 "10" 2020 "20")  ylabel(-.68 " " -.69 "0.5" 0"1" .69 "2" 1.39 "4" 2.08 "8" 2.77 "16")  ///
+ytitle("Relative representation" "(log scale)") title("Eliteness of rare British surnames (UK) vs -y names (HU)")  xtitle("Decade") ///
+ xline(1867 1919 1944 1989)
+ 
+ 
+graph export ../figures/uk_vs_hun.pdf, replace
